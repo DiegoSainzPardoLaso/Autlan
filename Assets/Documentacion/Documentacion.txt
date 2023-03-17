@@ -1,0 +1,17 @@
+NodeManager:
+      - La clase "NodeManager" se encarga de gestionar el comportamiento de los nodos hasta cierto punto.
+	Contiene una lista con todos los nodos que existen en la escena.
+	Tiene referencias a:
+		. El nodo seleccionado actualmente. "actualNode" . Se asigna cuando se hace click derecho sobre algún nodo.
+		. El nodo siguiente, este es asignado al realizar una conexion entre nodos ("Individualconnections" lo utiliza para conocer el nodo al que está conectado).
+		. El nodo al que esta sobrevolando el ratón "hoveredNode".
+	Ademas se encarga de toda la logica de seleccion de nodos, renombramiento de los mismos y su eliminación (Aunque borrar nodos se reparte entre las clases "PopUpWindow", 
+	"connections" y "NodeManager", esta se encarga de su propia lista de nodos).
+
+
+Individual Connections:  
+      - Cada nodo tiene un conjunto de conexiones (definidas por el usuario) hacia otros nodos.
+	Al crear una conexion, se instancia un objeto dentro del nodo, llamado "connections", en el que se iran
+	instanciando las conexiones que se definan, cada conexion contendra un script llamado "IndividualConnections".
+	Este Script gestiona la curva Bezier que conecta los nodos (Es simplemente algo grafico).
+	Además de almacenar el nodo al que realiza la conexión y una lista de transiciones que hacen posible el cambio al siguiente nodo.
